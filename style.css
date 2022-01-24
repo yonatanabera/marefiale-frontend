@@ -282,9 +282,11 @@
 .navigation-bar > .menu > ul > li {
   list-style: none;
   text-align: left;
-  margin: 2em;
+  margin: 3em 2em;
   color: var(--blue);
   border-bottom: 1px solid var(--gray);
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .navigation-bar > .menu > ul > li > i {
@@ -294,7 +296,9 @@
 /*---------------------Navigation bar-------------------------*/
 /*-------------------Search Bar------------------------------*/
 #searchBar {
-  margin: 5rem 20px 1rem 20px;
+  margin: 5rem 10px 1rem 10px;
+  padding: 0 10px;
+  border-radius: 5px;
 }
 
 .search-form {
@@ -311,8 +315,8 @@
 .search-form > .destination {
   margin: 10px auto;
   width: 100%;
-  background-color: transparent;
-  border-radius: 10px;
+  background-color: var(--gray);
+  border-radius: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,12 +325,10 @@
 .search-form > .destination > input {
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid #999;
-  width: 100%;
+  width: 80%;
 }
 
 .search-form > .destination > input:focus {
-  border-bottom: 3px solid var(--blue);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   outline: none;
@@ -351,6 +353,12 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   cursor: pointer;
+}
+
+.search-form > .chkinDetail > .chkinout > label,
+.search-form > .chkinDetail > .bookingDetail > label {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .search-form > .chkinDetail > .chkinout > div > input {
@@ -1623,6 +1631,215 @@
 }
 
 /* --------------------3rd Page Ends ------------------------ */
+/* --------------------4th Page starts ------------------------ */
+#reserve {
+  background-color: var(--gray);
+  margin: 3.5em 0 1rem 0;
+  height: 100vh;
+}
+
+#reserve .reserveTitle {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#reserve .reserveTitle h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#reserve .reservationDetail {
+  background-color: var(--white);
+  margin: 10px 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#reserve .reservationDetail .hotelDetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#reserve .reservationDetail .hotelDetail .hotelName h5 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#reserve .reservationDetail .hotelDetail .hotelName span {
+  display: block;
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+#reserve .reservationDetail .hotelDetail .hotelName span i {
+  color: var(--blue);
+}
+
+#reserve .reservationDetail .hotelDetail .hotelImage img {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+
+#reserve .reservationDetail .chkinout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+#reserve .reservationDetail .chkinout .chkin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-self: start;
+}
+
+#reserve .reservationDetail .chkinout .chkin span:nth-child(1) {
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+#reserve .reservationDetail .chkinout .chkin span:nth-child(2) {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#reserve .reservationDetail .chkinout .chkin span:nth-child(3) {
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+#reserve .reservationDetail .chkinout .nights {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#reserve .reservationDetail .chkinout .nights span {
+  background-color: var(--light-gray);
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 3px 5px;
+  color: var(--white);
+}
+
+#reserve .reservationDetail .chkinout .chkout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  justify-self: end;
+}
+
+#reserve .reservationDetail .chkinout .chkout span:nth-child(1) {
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+#reserve .reservationDetail .chkinout .chkout span:nth-child(2) {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#reserve .reservationDetail .chkinout .chkout span:nth-child(3) {
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+#reserve .reservationDetail .guestDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#reserve .reservationDetail .guestDetails div {
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+#reserve .reservationDetail .guestDetails div span {
+  font-size: 12px;
+  color: var(--dark-gray);
+}
+
+#reserve .reservationDetail .guestDetails div:nth-child(2) {
+  color: var(--dark-gray);
+}
+
+#reserve .reservationDetail .order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#reserve .reservationDetail .order span {
+  font-size: 12px;
+  color: var(--dark-gray);
+}
+
+#reserve .reservationDetail .totalPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#reserve .reservationDetail .totalPrice span {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#reserve .reservationDetail .totalPrice span:nth-child(1) {
+  color: var(--water-blue);
+}
+
+#reserve .reserveBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#reserve .reserveBtn button {
+  margin: 10px 20px;
+  width: 100%;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* --------------------4th Page Ends ------------------------ */
 /* 481px-768px IPads, Tablets*/
 @media (min-width: 100px) and (max-width: 350px) {
   .verticalLine {

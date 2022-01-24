@@ -241,9 +241,11 @@
 .navigation-bar > .menu > ul > li {
   list-style: none;
   text-align: left;
-  margin: 2em;
+  margin: 3em 2em;
   color: var(--blue);
   border-bottom: 1px solid var(--gray);
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .navigation-bar > .menu > ul > li > i {
@@ -255,7 +257,9 @@
 /*-------------------Search Bar------------------------------*/
 
 #searchBar {
-  margin: 5rem 20px 1rem 20px;
+  margin: 5rem 10px 1rem 10px;
+  padding: 0 10px;
+  border-radius: 5px;
 }
 
 .search-form {
@@ -267,8 +271,8 @@
 .search-form > .destination {
   margin: 10px auto;
   width: 100%;
-  background-color: transparent;
-  border-radius: 10px;
+  background-color: var(--gray);
+  border-radius: 25px;
   display: flex;
 }
 
@@ -276,12 +280,12 @@
   border: none;
   background-color: transparent;
   // border-radius: 10px;
-  border-bottom: 1px solid #999;
-  width: 100%;
+  // border-bottom: 1px solid #999;
+  width: 80%;
 }
 
 .search-form > .destination > input:focus {
-  border-bottom: 3px solid var(--blue);
+  // border-bottom: 3px solid var(--blue);
   transition: all 0.4s;
   outline: none;
 }
@@ -298,6 +302,12 @@
   flex-direction: row;
   justify-content: space-evenly;
   cursor: pointer;
+}
+
+.search-form > .chkinDetail > .chkinout > label,
+.search-form > .chkinDetail > .bookingDetail > label {
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .search-form > .chkinDetail > .chkinout > div > input {
@@ -1405,6 +1415,173 @@
 }
 
 /* --------------------3rd Page Ends ------------------------ */
+
+/* --------------------4th Page starts ------------------------ */
+
+#reserve {
+  background-color: var(--gray);
+  margin: 3.5em 0 1rem 0;
+  height: 100vh;
+  .reserveTitle {
+    text-align: center;
+    padding: 20px 0;
+    h5 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .reservationDetail {
+    background-color: var(--white);
+    margin: 10px 20px;
+    padding: 20px;
+    border-radius: 5px;
+
+    .hotelDetail {
+      display: flex;
+      justify-content: space-between;
+
+      .hotelName {
+        h5 {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        span {
+          display: block;
+          font-size: 12px;
+          color: var(--light-gray);
+          i {
+            color: var(--blue);
+          }
+        }
+      }
+
+      .hotelImage {
+        img {
+          width: 70px;
+          height: 70px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .chkinout {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .chkin {
+        display: flex;
+        flex-direction: column;
+        justify-self: start;
+        span:nth-child(1) {
+          font-size: 12px;
+          color: var(--light-gray);
+        }
+
+        span:nth-child(2) {
+          font-size: 12px;
+          font-weight: bold;
+        }
+
+        span:nth-child(3) {
+          font-size: 12px;
+          color: var(--light-gray);
+        }
+      }
+
+      .nights {
+        justify-self: center;
+        align-self: center;
+        span {
+          background-color: var(--light-gray);
+          border-radius: 5px;
+          font-size: 12px;
+          padding: 3px 5px;
+          color: var(--white);
+        }
+      }
+
+      .chkout {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-self: end;
+        span:nth-child(1) {
+          font-size: 12px;
+          color: var(--light-gray);
+        }
+
+        span:nth-child(2) {
+          font-size: 12px;
+          font-weight: bold;
+        }
+
+        span:nth-child(3) {
+          font-size: 12px;
+          color: var(--light-gray);
+        }
+      }
+    }
+
+    .guestDetails {
+      display: flex;
+      justify-content: space-between;
+      div {
+        font-size: 12px;
+        color: var(--light-gray);
+
+        span {
+          font-size: 12px;
+          color: var(--dark-gray);
+        }
+      }
+
+      div:nth-child(2) {
+        color: var(--dark-gray);
+      }
+    }
+
+    .order {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-size: 12px;
+        color: var(--dark-gray);
+      }
+    }
+
+    .totalPrice {
+      display: flex;
+      justify-content: space-between;
+      span {
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      span:nth-child(1) {
+        color: var(--water-blue);
+      }
+    }
+  }
+
+  .reserveBtn {
+    display: flex;
+    justify-content: center;
+    button {
+      margin: 10px 20px;
+      width: 100%;
+      background-color: var(--blue);
+      border: none;
+      color: var(--white);
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+}
+
+/* --------------------4th Page Ends ------------------------ */
 
 /* 481px-768px IPads, Tablets*/
 @import "./481";

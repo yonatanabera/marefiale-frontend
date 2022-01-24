@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Marefiale " />
+    <meta
+      property="og:description"
+      content="Find your ideal hotel and much more from cozy hotel to funky city apartments "
+    />
+    <meta property="og:image" content="addis-ababa.jpg" />
+    <meta property="og:url" content="https://www.marefiale.com" />
+    <link rel="shortcut icon" type="image/png" href="logo-01.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Marefiale</title>
+  </head>
+  <body>
+    <div id="loading-screen">
+      <div class="splash-screen">
+        <div class="splash-screen-text">ማረፊያአለ</div>
+      </div>
+      <div class="loading-buttons">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="transparent-background" onclick="sidebarOff()"></div>
+
+    <div id="container">
+      <!-- Navigation bar starts here -->
+
+      <nav class="navigation-bar">
+        <div class="menu-bar" id="nav-burger" onclick="sidebarToggle()">
+          <div class="humberger-menu">
+            <span class="menu-icons1"></span>
+            <span class="menu-icons2"></span>
+            <span class="menu-icons3"></span>
+          </div>
+        </div>
+        <div class="menu" id="nav-menu">
+          <div class="menu-logo">ማረፊያአለ</div>
+          <ul>
+            <li>
+              <i class="fa fa-home"></i>
+              Home
+            </li>
+            <li>
+              <i class="far fa-user"></i>
+              Profile
+            </li>
+            <li>
+              <i class="fa fa-briefcase"></i>
+              My Bookings
+            </li>
+            <li>
+              <i class="fa fa-plus"></i>
+              For Property Owners
+            </li>
+            <li>
+              <i class="fa fa-sign-out"></i>
+              Logout
+            </li>
+          </ul>
+        </div>
+        <h5 id="nav-logo" class="logo">ማረፊያአለ</h5>
+      </nav>
+
+      <!-- Navigation bar ends here -->
+
+      <main id="body">
+        <!-- Best deals start here -->
+
+        <section id="reserve">
+          <div class="reserveTitle">
+            <h5>Book Your Room</h5>
+          </div>
+
+          <div class="reservationDetail">
+            <div class="hotelDetail">
+              <div class="hotelName">
+                <h5>Kalkidan Hotel</h5>
+                <span>
+                  <i class="fa fa-map-marker-alt"></i>
+                  Addis Ababa
+                </span>
+                <span>Haya Hulet Area</span>
+              </div>
+              <div class="hotelImage">
+                <img src="Awash.jpg" alt="" />
+              </div>
+            </div>
+            <hr />
+            <div class="chkinout">
+              <div class="chkin">
+                <span>Check in</span>
+                <span>21, Jan</span>
+                <span>Friday</span>
+              </div>
+              <div class="nights">
+                <span>1 Night</span>
+              </div>
+              <div class="chkout">
+                <span>Check Out</span>
+                <span>22, Jan</span>
+                <span>Saturday</span>
+              </div>
+            </div>
+            <hr />
+
+            <div class="guestDetails">
+              <div>Guests</div>
+              <div>
+                <span>2</span>
+                Adults |
+                <span>0</span>
+                Children
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="order">
+              <span>1 order</span>
+              <span>X 1 Rooms</span>
+            </div>
+
+            <hr />
+
+            <div class="totalPrice">
+              <span>Total</span>
+              <span>250 ETB</span>
+            </div>
+          </div>
+
+          <div class="reserveBtn">
+            <button>Reserve</button>
+          </div>
+        </section>
+
+        <!-- Best deals ends here -->
+      </main>
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+  ></script>
+
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</html>
