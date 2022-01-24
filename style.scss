@@ -872,15 +872,19 @@
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    padding: 0.6em 0;
+    padding: 0;
     background-color: var(--white);
 
     div {
-      font-size: 14px;
+      font-size: 12px;
       // border: 2px solid var(--blue);
-      padding: 0 1em;
+      padding: 0 0.5em;
       border-radius: 5px;
       cursor: pointer;
+
+      .fa-exchange{
+        transform: rotate(90deg);
+      }
 
       &:hover {
         background-color: var(--light-blue);
@@ -937,18 +941,53 @@
 .sort-bar {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   bottom: -30%;
+  // bottom: 0;
   width: 100vw;
-  height: 23rem;
+  height: 13rem;
   max-height: 100%;
   background-color: #fff;
-  padding-top: 2em;
+  // padding-top: 2em;
   border-radius: 6px;
   z-index: 48;
   overflow: scroll;
   transition: ease-in;
   transition-duration: 0.5s;
+
+  .sort-slide-title {
+    align-self: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .sortRadioButtonsDiv {
+    padding: 3px;
+    width: 90vw;
+    display: flex;
+    // border: 1px solid black;
+    justify-content: space-between;
+
+    input {
+      font-size: 14px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: var(--blue);
+      border: none;
+      color: var(--white);
+      border-radius: 10px;
+      margin: 10px auto;
+    }
+  }
 }
 
 .sort-bar.active {
@@ -981,24 +1020,52 @@
 .price-bar {
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: fixed;
   bottom: -30%;
+  // bottom: 0;
   width: 100vw;
-  height: 23rem;
+  height: 18rem;
   max-height: 100%;
   background-color: #fff;
   padding-top: 2em;
-  // top: 0;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
   border-radius: 6px;
   z-index: 48;
-  // transform: translateY(50%);
   overflow: scroll;
-  // transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: ease-in;
   transition-duration: 0.5s;
+
+  .price-slide-title {
+    align-self: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .priceRadioButtonsDiv {
+    padding: 3px;
+    width: 90vw;
+    display: flex;
+    // border: 1px solid black;
+    justify-content: space-between;
+
+    input {
+      font-size: 14px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: var(--blue);
+      border: none;
+      color: var(--white);
+      border-radius: 10px;
+      margin: 10px auto;
+    }
+  }
 }
 
 .price-bar.active {
@@ -1031,24 +1098,57 @@
 .locality-bar {
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: fixed;
   bottom: -30%;
+  // bottom: 0;
   width: 100vw;
   height: 23rem;
   max-height: 100%;
   background-color: #fff;
   padding-top: 2em;
-  // top: 0;
-  // bottom: 0;
-  // right: 0;
-  // left: 0;
   border-radius: 6px;
   z-index: 48;
-  // transform: translateY(50%);
   overflow: scroll;
-  // transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: ease-in;
   transition-duration: 0.5s;
+
+  form{
+    overflow: scroll; 
+    padding-right: 10px;
+  }
+
+  .locality-slide-title {
+    align-self: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .localityRadioButtonsDiv {
+    padding: 3px;
+    width: 90vw;
+    display: flex;
+    // border: 1px solid black;
+    justify-content: space-between;
+
+    input {
+      font-size: 14px;
+    }
+
+    label {
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: var(--blue);
+      border: none;
+      color: var(--white);
+      border-radius: 10px;
+      margin: 10px auto;
+    }
+  }
 }
 
 .locality-bar.active {

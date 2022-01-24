@@ -1004,15 +1004,20 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding: 0.6em 0;
+  padding: 0;
   background-color: var(--white);
 }
 
 #page2Search .sortAndFilter div {
-  font-size: 14px;
-  padding: 0 1em;
+  font-size: 12px;
+  padding: 0 0.5em;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#page2Search .sortAndFilter div .fa-exchange {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 #page2Search .sortAndFilter div:hover {
@@ -1067,13 +1072,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: fixed;
   bottom: -30%;
   width: 100vw;
-  height: 23rem;
+  height: 13rem;
   max-height: 100%;
   background-color: #fff;
-  padding-top: 2em;
   border-radius: 6px;
   z-index: 48;
   overflow: scroll;
@@ -1081,6 +1091,43 @@
   transition: ease-in;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+
+.sort-bar .sort-slide-title {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sort-bar .sortRadioButtonsDiv {
+  padding: 3px;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sort-bar .sortRadioButtonsDiv input {
+  font-size: 14px;
+}
+
+.sort-bar .sortRadioButtonsDiv label {
+  font-size: 14px;
+}
+
+.sort-bar .sortRadioButtonsDiv button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  border-radius: 10px;
+  margin: 10px auto;
 }
 
 .sort-bar.active {
@@ -1125,10 +1172,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: fixed;
   bottom: -30%;
   width: 100vw;
-  height: 23rem;
+  height: 18rem;
   max-height: 100%;
   background-color: #fff;
   padding-top: 2em;
@@ -1139,6 +1189,43 @@
   transition: ease-in;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+
+.price-bar .price-slide-title {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.price-bar .priceRadioButtonsDiv {
+  padding: 3px;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.price-bar .priceRadioButtonsDiv input {
+  font-size: 14px;
+}
+
+.price-bar .priceRadioButtonsDiv label {
+  font-size: 14px;
+}
+
+.price-bar .priceRadioButtonsDiv button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  border-radius: 10px;
+  margin: 10px auto;
 }
 
 .price-bar.active {
@@ -1183,6 +1270,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: fixed;
   bottom: -30%;
   width: 100vw;
@@ -1197,6 +1287,48 @@
   transition: ease-in;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+
+.locality-bar form {
+  overflow: scroll;
+  padding-right: 10px;
+}
+
+.locality-bar .locality-slide-title {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.locality-bar .localityRadioButtonsDiv {
+  padding: 3px;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.locality-bar .localityRadioButtonsDiv input {
+  font-size: 14px;
+}
+
+.locality-bar .localityRadioButtonsDiv label {
+  font-size: 14px;
+}
+
+.locality-bar .localityRadioButtonsDiv button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  border-radius: 10px;
+  margin: 10px auto;
 }
 
 .locality-bar.active {

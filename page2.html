@@ -116,54 +116,176 @@
             Chi
           </div>
           <div class="sortAndFilter">
-            <div class="sort" onclick="slideSort()">
-              Sort
-              <i class="far fa-arrow-down"></i>
-            </div>
-            <div class="price" onclick="slidePrice()">
-              Price
-              <i class="fas fa-money-bill-wave"></i>
-            </div>
             <div class="filter" onclick="slideLocality()">
-              Locality
               <i class="fas fa-map-marker-alt"></i>
+              Specific Location
+            </div>
+
+            <div class="price" onclick="slidePrice()">
+              <i class="fa fa-credit-card"></i>
+              Price Range
+            </div>
+
+            <div class="sort" onclick="slideSort()">
+              <i class="fa fa-exchange"></i>
+              Sort
             </div>
           </div>
 
-          <div id="sort-slide">
+          <div id="sort-slide" class="">
             <div class="sort-bar">
               <h4 class="sort-slide-title">Sort By</h4>
 
-              <div class="apply-btn">
-                <button type="button" onclick="return submitSorting()">
-                  Apply
-                </button>
-              </div>
+              <form action="">
+                <div class="sortRadioButtonsDiv">
+                  <label for="sortByPopularity">Price (Low - High)</label>
+                  <input id="sortByPrice" name="sort" type="radio" />
+                </div>
+
+                <div class="sortRadioButtonsDiv">
+                  <label for="sortByPopularity">Popularity</label>
+                  <input id="sortByPopularity" name="sort" type="radio" />
+                </div>
+                <div class="sortRadioButtonsDiv">
+                  <label for="sortByPopularity">Our Recommendation</label>
+                  <input id="sortByRecommended" name="sort" type="radio" />
+                </div>
+
+                <div class="sortRadioButtonsDiv">
+                  <label for="sortBySpecialOffers">Special Offers</label>
+                  <input id="sortBySpecialOffers" name="sort" type="radio" />
+                </div>
+
+                <!-- <div class="sortRadioButtonsDiv">
+                  <button type="button" onclick="return submitSorting()">
+                    Apply
+                  </button>
+                </div> -->
+              </form>
             </div>
           </div>
 
-
-          <div id="price-slide">
+          <div id="price-slide" class="">
             <div class="price-bar">
-              <h4 class="price-slide-title">Filter Prices</h4>
+              <h4 class="price-slide-title">Price Range</h4>
 
-              <div class="apply-btn">
-                <button type="button" onclick="return submitSorting()">
-                  Show Properties
-                </button>
-              </div>
+              <form action="">
+                <div class="priceRadioButtonsDiv">
+                  <label for="price1">0 - 300</label>
+                  <input id="price1" name="price" type="radio" />
+                </div>
+
+                <div class="priceRadioButtonsDiv">
+                  <label for="price2">301 - 750</label>
+                  <input id="price2" name="price" type="radio" />
+                </div>
+
+                <div class="priceRadioButtonsDiv">
+                  <label for="price3">751 - 2000</label>
+                  <input id="price3" name="price" type="radio" />
+                </div>
+
+                <div class="priceRadioButtonsDiv">
+                  <label for="price4">2001 - 3500</label>
+                  <input id="price4" name="price" type="radio" />
+                </div>
+
+                <div class="priceRadioButtonsDiv">
+                  <label for="price5">3501 - 5000</label>
+                  <input id="price5" name="price" type="radio" />
+                </div>
+
+                <div class="priceRadioButtonsDiv">
+                  <label for="price6">More than 5000</label>
+                  <input id="price6" name="price" type="radio" />
+                </div>
+
+                <!-- <div class="priceRadioButtonsDiv">
+                  <button type="button" onclick="return submitSorting()">
+                    Apply
+                  </button>
+                </div> -->
+              </form>
             </div>
           </div>
 
-          <div id="locality-slide">
+          <div id="locality-slide" class="">
             <div class="locality-bar">
-              <h4 class="locality-slide-title">Filter by Locality</h4>
+              <h4 class="locality-slide-title">Select Location</h4>
 
-              <div class="apply-btn">
-                <button type="button" onclick="return submitSorting()">
-                  Show Properties
-                </button>
-              </div>
+              <form action="">
+                <div class="localityRadioButtonsDiv">
+                  <label for="location1">All Locations</label>
+                  <input id="location1" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location2">
+                    Stadium, Bole Road, Meskel Flower
+                  </label>
+                  <input id="location2" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location3">
+                    Kazanchis, Haya Hulet, B.Medhanealem
+                  </label>
+                  <input id="location3" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location4">Megenagna, Gerji, Ayat</label>
+                  <input id="location4" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location5">Torhailoch, Sarbet, Jemo</label>
+                  <input id="location5" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location6">Gotera, Nifas Silk, Kaliti</label>
+                  <input id="location6" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location7">Piassa, Semen Hotel, Asco</label>
+                  <input id="location7" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location8">Autobis Tera, Kolfe, Wingate</label>
+                  <input id="location8" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location9">
+                    Arat Killo, Sidst Killo, Shiro Meda
+                  </label>
+                  <input id="location9" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location10">Lideta, Teklehaymanot, Mercato</label>
+                  <input id="location10" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location11">Bethel, Ayer Tena, Lebu</label>
+                  <input id="location11" name="locality" type="radio" />
+                </div>
+
+                <div class="localityRadioButtonsDiv">
+                  <label for="location12">Halal Stays</label>
+                  <input id="location12" name="locality" type="radio" />
+                </div>
+
+                <!-- <div class="priceRadioButtonsDiv">
+                  <button type="button" onclick="return submitSorting()">
+                    Apply
+                  </button>
+                </div> -->
+              </form>
             </div>
           </div>
 
