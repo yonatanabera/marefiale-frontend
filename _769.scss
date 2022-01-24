@@ -1,0 +1,48 @@
+/* 769px-1024px Small Screens, Laptops*/
+
+@media (min-width: 769px) {
+  .items > .item {
+    display: grid;
+    grid-template-columns: 300px 5fr;
+  }
+
+  .items {
+    .item {
+      img {
+        width: 100%;
+        min-width: 150px;
+        height: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .slide-number-of-rooms {
+    width: 100vw;
+  }
+
+  .daterangepicker {
+    max-width: 700px;
+  }
+
+  .daterangepicker .calendar-table th,
+  .daterangepicker .calendar-table td,
+  .daterangepicker .drp-selected {
+    font-size: 14px;
+  }
+
+  .daterangepicker.show-calendar .drp-calendar {
+    width: 50%;
+  }
+
+  #call {
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1.2rem 2.1rem 0.3rem 2.1rem;
+  }
+
+  .search-form > .destination {
+    width: 100%;
+  }
+}

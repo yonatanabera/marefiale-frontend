@@ -1,0 +1,58 @@
+/* 1025px-1200px Desktops, large screens*/
+
+@media (min-width: 1025px) {
+  .navigation-bar {
+    // all: unset;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(700px, 3fr);
+
+    align-content: center;
+
+    .logo {
+      all: unset;
+      grid-column: 1 / span 1;
+      grid-row: 1;
+      font-size: 24px;
+    }
+  }
+
+  .navigation-bar > .menu-bar {
+    display: none;
+  }
+
+  .navigation-bar > .menu {
+    all: unset;
+    grid-column: 2 / span 1;
+    height: auto;
+    width: auto;
+    align-self: center;
+    justify-self: end;
+    margin: 0 4em 0 0em;
+
+    .menu-logo {
+      display: none;
+    }
+
+    ul {
+      all: unset;
+      //   position: relative;
+      //   top: 0;
+      //   left: 0;
+      display: flex;
+      z-index: 40;
+
+      li {
+        all: unset;
+        color: white;
+        padding: 0 1.2em;
+        font-size: 18px;
+        //   border: 1px solid red;
+
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+}

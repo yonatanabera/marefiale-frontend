@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Marefiale " />
+    <meta
+      property="og:description"
+      content="Find your ideal hotel and much more from cozy hotel to funky city apartments "
+    />
+    <meta property="og:image" content="addis-ababa.jpg" />
+    <meta property="og:url" content="https://www.marefiale.com" />
+    <link rel="shortcut icon" type="image/png" href="logo-01.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Marefiale</title>
+  </head>
+  <body>
+    <div id="loading-screen">
+      <div class="splash-screen">
+        <div class="splash-screen-text">ማረፊያአለ</div>
+      </div>
+      <div class="loading-buttons">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="transparent-background" onclick="sidebarOff()"></div>
+
+    <div id="container">
+      <!-- Navigation bar starts here -->
+
+      <nav class="navigation-bar">
+        <div class="menu-bar" id="nav-burger" onclick="sidebarToggle()">
+          <div class="humberger-menu">
+            <span class="menu-icons1"></span>
+            <span class="menu-icons2"></span>
+            <span class="menu-icons3"></span>
+          </div>
+        </div>
+        <div class="menu" id="nav-menu">
+          <div class="menu-logo">ማረፊያአለ</div>
+          <ul>
+            <li>
+              <i class="fa fa-search"></i>
+              Home
+            </li>
+            <li>
+              <i class="far fa-user"></i>
+              Profile
+            </li>
+            <li>
+              <i class="fa fa-plus"></i>
+              List Your Property
+            </li>
+            <li>
+              <i class="fa fa-user-circle"></i>
+              Subscriber Account
+            </li>
+            <li>
+              <i class="fa fa-sign-out"></i>
+              Logout
+            </li>
+          </ul>
+        </div>
+        <h5 id="nav-logo" class="logo">ማረፊያአለ</h5>
+      </nav>
+
+      <!-- Navigation bar ends here -->
+
+      <main id="body">
+        <!-- Search bar starts here -->
+        <section id="call">
+          <a href="tel:+25192236522">
+            <p>
+              <i class="fa fa-phone"></i>
+              Call
+            </p>
+          </a>
+        </section>
+
+        <section id="page2Search">
+          <div class="searchParams">
+            <span>18, Jan</span>
+            -
+            <span>19, Jan</span>
+            -
+            <span>1</span>
+            Room
+            <span>2</span>
+            Adu
+            <span>0</span>
+            Chi
+          </div>
+          <div class="sortAndFilter">
+            <div class="sort" onclick="slideSort()">
+              Sort
+              <i class="far fa-arrow-down"></i>
+            </div>
+            <div class="price" onclick="slidePrice()">
+              Price
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="filter" onclick="slideLocality()">
+              Locality
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+          </div>
+
+          <div id="sort-slide">
+            <div class="sort-bar">
+              <h4 class="sort-slide-title">Sort By</h4>
+
+              <div class="apply-btn">
+                <button type="button" onclick="return submitSorting()">
+                  Apply
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="price-slide">
+            <div class="price-bar">
+              <h4 class="price-slide-title">Filter Prices</h4>
+
+              <div class="apply-btn">
+                <button type="button" onclick="return submitSorting()">
+                  Show Properties
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="locality-slide">
+            <div class="locality-bar">
+              <h4 class="locality-slide-title">Filter by Locality</h4>
+
+              <div class="apply-btn">
+                <button type="button" onclick="return submitSorting()">
+                  Show Properties
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="breaker"></div>
+        </section>
+
+        <div class="searchBarBgPage2">
+          <div id="searchBar">
+            <form action="">
+              <div class="search-form">
+                <div class="destination">
+                  <i class="fas fa-search"></i>
+                  <input type="text" placeholder="Addis Ababa" />
+                </div>
+
+                <div class="chkinDetail">
+                  <div class="chkinout">
+                    <label for="destination">Check in - Check out</label>
+                    <div>
+                      <input
+                        type="text"
+                        name="daterange"
+                        onclick="e.preventDefault()"
+                        readonly="readonly"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="verticalLine"></div>
+
+                  <div class="bookingDetail" onclick="slideNumberOfRooms()">
+                    <label for="destination">Number of Rooms</label>
+                    <div>
+                      <span>
+                        <span class="noOfRoomsTop">1</span>
+                        Room,
+                        <span class="noOfAdultsTop">2</span>
+                        Adu,
+                        <span class="noOfChildTop">0</span>
+                        Chi
+                      </span>
+                    </div>
+                    <div class="slide-number-of-rooms-bg">
+                      <div class="slide-number-of-rooms">
+                        <h4 class="number-of-rooms-title">
+                          Select Rooms and Guests
+                        </h4>
+                        <div class="rooms-container">
+                          <label for="Rooms">Rooms</label>
+                          <div class="selectors">
+                            <button
+                              type="button"
+                              class="minus"
+                              onclick=" return decRooms()"
+                            >
+                              -
+                            </button>
+                            <span class="noOfRooms">1</span>
+                            <button
+                              type="button"
+                              class="plus"
+                              onclick=" return incRooms()"
+                            >
+                              +
+                            </button>
+                          </div>
+                          <input
+                            type="hidden"
+                            name="rooms"
+                            min="1"
+                            value="1"
+                            id="roomsInput"
+                          />
+                        </div>
+                        <hr />
+
+                        <div class="adults-container">
+                          <label for="Adults">Adults</label>
+                          <div class="selectors">
+                            <button
+                              type="button"
+                              class="minus"
+                              onclick=" return decAdults()"
+                            >
+                              -
+                            </button>
+                            <span class="noOfAdults">2</span>
+                            <button
+                              type="button"
+                              class="plus"
+                              onclick=" return incAdults()"
+                            >
+                              +
+                            </button>
+                          </div>
+                          <input
+                            type="hidden"
+                            name="adults"
+                            min="1"
+                            value="2"
+                            id="adultsInput"
+                          />
+                        </div>
+
+                        <hr />
+
+                        <div class="children-container">
+                          <label for="Children">Children (Ages 0-17)</label>
+                          <div class="selectors">
+                            <button
+                              type="button"
+                              class="minus"
+                              onclick=" return decChild()"
+                            >
+                              -
+                            </button>
+                            <span class="noOfChild">1</span>
+                            <button
+                              type="button"
+                              class="plus"
+                              onclick=" return incChild()"
+                            >
+                              +
+                            </button>
+                          </div>
+                          <input
+                            type="hidden"
+                            name="children"
+                            min="0"
+                            value="0"
+                            id="childInput"
+                          />
+                        </div>
+
+                        <hr />
+
+                        <div class="apply-btn">
+                          <button
+                            type="button"
+                            onclick="return submitBookingDetail()"
+                          >
+                            Apply
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="search-btn">
+                  <button type="submit">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Search bar ends here -->
+
+        <!-- Best deals start here -->
+
+        <section id="bestDeals" class="bestDeals2">
+          <div class="items">
+            <div class="item">
+              <img
+                loading="lazy"
+                decoding="async"
+                class="item-image"
+                src="room1.jpg"
+                alt="hotelImage"
+              />
+              <div class="item-description">
+                <h5 class="item-name">The Grand Palace Hotel</h5>
+                <i class="far fa-heart"></i>
+                <p class="item-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Addis Ababa
+                </p>
+                <p class="item-nearest-essential">5 km from city center</p>
+                <p class="item-review">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+
+                  20 Reviews
+                </p>
+                <span class="item-type">H</span>
+                <div class="item-price">
+                  <small>Starting at</small>
+                  <b>ETB 150</b>
+                  <small>/ night</small>
+                </div>
+                <div class="item-pay-at-hotel">
+                  <i>O</i>
+                  Pay Online
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img
+                loading="lazy"
+                decoding="async"
+                class="item-image"
+                src="room3.jpg"
+                alt="hotelImage"
+              />
+              <div class="item-description">
+                <h5 class="item-name">The Grand Palace Hotel</h5>
+                <i class="far fa-heart"></i>
+                <p class="item-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Addis Ababa
+                </p>
+                <p class="item-nearest-essential">5 km from city center</p>
+                <p class="item-review">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+
+                  20 Reviews
+                </p>
+                <span class="item-type">H</span>
+                <div class="item-price">
+                  <small>Starting at</small>
+                  <b>ETB 150</b>
+                  <small>/ night</small>
+                </div>
+                <div class="item-pay-at-hotel">
+                  <i>o</i>
+                  Pay Online
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img
+                loading="lazy"
+                decoding="async"
+                class="item-image"
+                src="room4.jpg"
+                alt="hotelImage"
+              />
+              <div class="item-description">
+                <h5 class="item-name">The Grand Palace Hotel</h5>
+                <i class="far fa-heart"></i>
+                <p class="item-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Addis Ababa
+                </p>
+                <p class="item-nearest-essential">5 km from city center</p>
+                <p class="item-review">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+
+                  20 Reviews
+                </p>
+                <span class="item-type">H</span>
+                <div class="item-price">
+                  <small>Starting at</small>
+                  <b>ETB 150</b>
+                  <small>/ night</small>
+                </div>
+                <div class="item-pay-at-hotel">
+                  <i>O</i>
+                  Pay online
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img
+                loading="lazy"
+                decoding="async"
+                class="item-image"
+                src="room5.jpg"
+                alt="hotelImage"
+              />
+              <div class="item-description">
+                <h5 class="item-name">The Grand Palace Hotel</h5>
+                <i class="far fa-heart"></i>
+                <p class="item-location">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Addis Ababa
+                </p>
+                <p class="item-nearest-essential">5 km from city center</p>
+                <p class="item-review">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+
+                  20 Reviews
+                </p>
+                <span class="item-type">H</span>
+                <div class="item-price">
+                  <small>Starting at</small>
+                  <b>ETB 150</b>
+                  <small>/ night</small>
+                </div>
+                <div class="item-pay-at-hotel">
+                  <i>P</i>
+                  Pay at Hotel
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Best deals ends here -->
+      </main>
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+  ></script>
+
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</html>
