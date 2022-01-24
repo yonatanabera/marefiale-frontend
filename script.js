@@ -58,15 +58,17 @@ const slideNumberOfRooms = () => {
   slideNumberContainer.classList.add("slide-active");
 };
 
-slideNumber.addEventListener("click", (e) => {
-  slideNumber.classList.remove("active");
-  slideNumberContainer.classList.remove("slide-active");
-  e.stopPropagation();
-});
+if (slideNumber) {
+  slideNumber.addEventListener("click", (e) => {
+    slideNumber.classList.remove("active");
+    slideNumberContainer.classList.remove("slide-active");
+    e.stopPropagation();
+  });
 
-slideNumberContainer.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
+  slideNumberContainer.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+}
 
 const roomInput = document.getElementById("roomsInput");
 const adultsInput = document.getElementById("adultsInput");
@@ -210,66 +212,83 @@ const showSearchParams = document.querySelector(".searchParams");
 const searchBarBgPage2 = document.querySelector(".searchBarBgPage2");
 const searchBar = document.getElementById("searchBar");
 
-showSearchParams.addEventListener("click", (e) => {
-  searchBarBgPage2.classList.toggle("active");
-  console.log(e);
-});
+if (showSearchParams && searchBarBgPage2) {
+  showSearchParams.addEventListener("click", (e) => {
+    searchBarBgPage2.classList.toggle("active");
+    // console.log(e);
+  });
 
-searchBar.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
-
-searchBarBgPage2.addEventListener("click", () => {
-  searchBarBgPage2.classList.remove("active");
   searchBar.addEventListener("click", (e) => {
     e.stopPropagation();
   });
-});
 
-const sortSlide=document.getElementById('sort-slide');
-const sortSlideChild=document.querySelector('.sort-bar');
-
-const slideSort=()=>{
-  console.log(sortSlideChild);
-  sortSlide.classList.toggle('active');
-  sortSlideChild.classList.toggle('active');
+  searchBarBgPage2.addEventListener("click", () => {
+    searchBarBgPage2.classList.remove("active");
+    searchBar.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  });
 }
 
-sortSlide.addEventListener('click', ()=>{
-  sortSlide.classList.toggle('active');
-  sortSlideChild.classList.toggle('active');
+const sortSlide = document.getElementById("sort-slide");
+const sortSlideChild = document.querySelector(".sort-bar");
 
-})
-
-const priceSlide=document.getElementById('price-slide');
-const priceSlideChild=document.querySelector('.price-bar');
-
-const slidePrice=()=>{
-  console.log(priceSlideChild);
-  priceSlide.classList.toggle('active');
-  priceSlideChild.classList.toggle('active');
+if (sortSlide) {
+  sortSlide.addEventListener("click", () => {
+    sortSlide.classList.toggle("active");
+    sortSlideChild.classList.toggle("active");
+  });
 }
 
-priceSlide.addEventListener('click', ()=>{
-  priceSlide.classList.toggle('active');
-  priceSlideChild.classList.toggle('active');
+const slideSort = () => {
+  // console.log(sortSlideChild);
+  sortSlide.classList.toggle("active");
+  sortSlideChild.classList.toggle("active");
+};
 
-})
+const priceSlide = document.getElementById("price-slide");
+const priceSlideChild = document.querySelector(".price-bar");
 
-
-const localitySlide=document.getElementById('locality-slide');
-const localitySlideChild=document.querySelector('.locality-bar');
-
-const slideLocality=()=>{
-  console.log(localitySlideChild);
-  localitySlide.classList.toggle('active');
-  localitySlideChild.classList.toggle('active');
+if (priceSlide) {
+  priceSlide.addEventListener("click", () => {
+    priceSlide.classList.toggle("active");
+    priceSlideChild.classList.toggle("active");
+  });
 }
 
-localitySlide.addEventListener('click', ()=>{
-  localitySlide.classList.toggle('active');
-  localitySlideChild.classList.toggle('active');
+const slidePrice = () => {
+  // console.log(priceSlideChild);
+  priceSlide.classList.toggle("active");
+  priceSlideChild.classList.toggle("active");
+};
 
-})
+const localitySlide = document.getElementById("locality-slide");
+const localitySlideChild = document.querySelector(".locality-bar");
+
+if (localitySlide) {
+  localitySlide.addEventListener("click", () => {
+    localitySlide.classList.toggle("active");
+    localitySlideChild.classList.toggle("active");
+  });
+}
+
+const slideLocality = () => {
+  // console.log(localitySlideChild);
+  localitySlide.classList.toggle("active");
+  localitySlideChild.classList.toggle("active");
+};
 
 /*---------------2nd page ends here------------------*/
+
+/*---------------3rd page starts here------------------*/
+
+var hotelMapContainer = document.querySelector(".hotelMapContainer");
+var mapIframe = document.querySelector(".mapIframe");
+if (hotelMapContainer && mapIframe) {
+  hotelMapContainer.addEventListener("click", () => {
+    hotelMapContainer.classList.toggle("active");
+    mapIframe.classList.toggle("active");
+  });
+}
+
+/*---------------3rd page ends here------------------*/
