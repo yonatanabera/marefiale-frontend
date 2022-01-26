@@ -97,7 +97,7 @@
           <a href="tel:+25192236522">
             <p>
               <i class="fa fa-phone"></i>
-              Call
+              Call To Book
             </p>
           </a>
         </section>
@@ -297,23 +297,38 @@
             <form action="">
               <div class="search-form">
                 <div class="destination">
+                  <div>
+                    <span>Select Destination</span>
+                    <div>
+                      <i class="fas fa-map-marker-alt"></i>
+                      <input
+                        type="text"
+                        placeholder="Addis Ababa"
+                        oninput="search(this.value)"
+                        onfocus="showDestinationsList()"
+                        onblur="hideDestinationsList()"
+                      />
+                    </div>
+                  </div>
                   <i class="fas fa-search"></i>
-                  <input type="text" placeholder="Addis Ababa" />
                 </div>
-
+  
                 <div class="chkinDetail">
                   <div class="chkinout">
-                    <label for="destination">Check in - Check out</label>
+                    <label for="destination">Dates</label>
                     <div>
+                      <!-- <i class="far fa-calendar"></i> -->
+                      <!-- <span name="daterange">Click here</span> -->
                       <input type="text" name="daterange" readonly="readonly" />
                     </div>
                   </div>
-
+  
                   <div class="verticalLine"></div>
-
+  
                   <div class="bookingDetail" onclick="slideNumberOfRooms()">
-                    <label for="destination">Number of Rooms</label>
+                    <label for="destination">Rooms</label>
                     <div>
+                      <!-- <i class="far fa-user"></i> -->
                       <span>
                         <span class="noOfRoomsTop">1</span>
                         Room,
@@ -356,7 +371,7 @@
                           />
                         </div>
                         <hr />
-
+  
                         <div class="adults-container">
                           <label for="Adults">Adults</label>
                           <div class="selectors">
@@ -384,9 +399,9 @@
                             id="adultsInput"
                           />
                         </div>
-
+  
                         <hr />
-
+  
                         <div class="children-container">
                           <label for="Children">Children (Ages 0-17)</label>
                           <div class="selectors">
@@ -414,9 +429,9 @@
                             id="childInput"
                           />
                         </div>
-
+  
                         <hr />
-
+  
                         <div class="apply-btn">
                           <button
                             type="button"
@@ -429,12 +444,23 @@
                     </div>
                   </div>
                 </div>
-
+  
                 <div class="search-btn">
                   <button type="submit">Search</button>
                 </div>
               </div>
             </form>
+  
+            <ul id="destinationsList" class="destinationsList">
+              <li>Addis Ababa</li>
+              <li>Adama</li>
+              <li>Dire Dawa</li>
+              <li>Arba Minch</li>
+              <li>Holeta Genet</li>
+              <li>Wolayta</li>
+              <li>Hawassa</li>
+              <li>Hossana</li>
+            </ul>
           </div>
         </div>
 

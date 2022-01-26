@@ -127,6 +127,7 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  background-color: var(--gray);
 }
 
 /*---------------------Navigation bar-------------------------*/
@@ -294,11 +295,67 @@
 }
 
 /*---------------------Navigation bar-------------------------*/
+.leftAside,
+.rightAside {
+  display: none;
+}
+
 /*-------------------Search Bar------------------------------*/
 #searchBar {
   margin: 5rem 10px 1rem 10px;
   padding: 0 10px;
   border-radius: 5px;
+  background-color: var(--white);
+}
+
+#searchBar .destinationsList {
+  background-color: white;
+  overflow: auto;
+  min-height: 50px;
+  max-height: 50%;
+  width: 90%;
+  max-width: 600px;
+  padding: 20px 20px;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 5px;
+  z-index: 2;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  visibility: hidden;
+  display: none;
+}
+
+#searchBar .destinationsList li {
+  display: block;
+  font-size: 12px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#searchBar .destinationsList li:hover {
+  background-color: var(--gray);
+}
+
+#searchBar .destinationsList li:focus {
+  background-color: var(--gray);
+}
+
+#searchBar .destinationsList li:active {
+  background-color: var(--gray);
+}
+
+#searchBar .destinationsList li.selected {
+  background-color: var(--gray);
+}
+
+#searchBar .destinationsList.active {
+  visibility: visible;
+  display: block;
 }
 
 .search-form {
@@ -320,27 +377,68 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3px 0;
 }
 
-.search-form > .destination > input {
+.search-form > .destination > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.search-form > .destination > div > div > input {
+  font-size: 12px;
   border: none;
   background-color: transparent;
+  line-height: 12px;
   width: 80%;
 }
 
-.search-form > .destination > input:focus {
+.search-form > .destination > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-form > .destination > div > div > input:focus {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   outline: none;
 }
 
-.search-form > .destination > .fa-search {
+.search-form > .destination > .fa-search,
+.search-form > .destination > div > div > .fa-map-marker-alt {
   color: #999;
-  padding: 14px;
+  padding: 0 18px;
+  font-size: 10px;
+}
+
+.search-form > .destination > div > span {
+  margin: 2px 0 0 18px;
+  font-size: 10px;
+  color: var(--dark-gray);
+}
+
+.search-form > .destination > div > div > .fa-map-marker-alt {
+  color: var(--blue);
 }
 
 .search-form > .chkinDetail {
-  margin: 10px auto;
+  margin: 0 auto;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -357,20 +455,21 @@
 
 .search-form > .chkinDetail > .chkinout > label,
 .search-form > .chkinDetail > .bookingDetail > label {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
+  color: var(--dark-gray);
 }
 
 .search-form > .chkinDetail > .chkinout > div > input {
   background-color: transparent;
   color: var(--dark-gray);
-  text-align: center;
+  text-align: left;
 }
 
 .search-form > .chkinDetail > .chkinout > div > input,
 .search-form > .chkinDetail > .bookingDetail > div > span,
 .search-form > .chkinDetail > .bookingDetail > div > span > span {
-  font-size: 13px;
+  font-size: 12px;
   border: none;
   color: var(--dark-gray);
 }
@@ -445,7 +544,7 @@
 }
 
 .search-form > .chkinDetail > .verticalLine {
-  width: 2px;
+  width: 1px;
   background-color: var(--gray);
 }
 
@@ -489,9 +588,10 @@
   max-height: 100%;
   background-color: #fff;
   padding-top: 2em;
+  max-width: 700px;
   border-radius: 6px;
   z-index: 48;
-  overflow: scroll;
+  overflow: auto;
   -webkit-transition: ease-in;
   transition: ease-in;
   -webkit-transition-duration: 0.5s;
@@ -638,8 +738,9 @@
 
 #popularDestinations > .popularDestination-title {
   margin: 10px 20px;
-  font-size: 16px;
-  font-weight: bolder;
+  font-size: 12px;
+  color: var(--dark-gray);
+  font-weight: bold;
 }
 
 #popularDestinations > hr {
@@ -696,18 +797,24 @@
 
 /*-------------------Popular Destinations------------------------------*/
 /* --------------------Best Deals------------------------ */
+#body {
+  margin: 1rem 0;
+  background-color: var(--gray);
+}
+
 #bestDeals {
   margin: 2em 0;
 }
 
 #bestDeals > .bestDeals-title {
   margin: 10px 20px;
-  font-size: 16px;
-  font-weight: bolder;
+  font-size: 12px;
+  color: var(--dark-gray);
+  font-weight: bold;
 }
 
 #bestDeals > hr {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .items {
@@ -716,8 +823,9 @@
 }
 
 .items > .item {
-  margin: 1em 0.7em;
+  margin: 0.5em 0.7em;
   border-radius: 4px;
+  background-color: var(--white);
   -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
@@ -733,7 +841,8 @@
   width: 100%;
   min-width: 70px;
   height: 100%;
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -919,6 +1028,11 @@
   padding: 2em 1em;
   border-radius: 6px;
   width: 80%;
+  max-width: 600px;
+}
+
+.searchBarBgPage2 #searchBar .destinationsList {
+  top: 40%;
 }
 
 .searchBarBgPage2 #searchBar .search-form {
@@ -1091,12 +1205,13 @@
   position: fixed;
   bottom: -30%;
   width: 100vw;
+  max-width: 700px;
   height: 13rem;
   max-height: 100%;
   background-color: #fff;
   border-radius: 6px;
   z-index: 48;
-  overflow: scroll;
+  overflow: auto;
   -webkit-transition: ease-in;
   transition: ease-in;
   -webkit-transition-duration: 0.5s;
@@ -1112,8 +1227,9 @@
 }
 
 .sort-bar .sortRadioButtonsDiv {
-  padding: 3px;
+  padding: 3px 30px;
   width: 90vw;
+  max-width: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1187,6 +1303,7 @@
           align-items: center;
   position: fixed;
   bottom: -30%;
+  max-width: 700px;
   width: 100vw;
   height: 18rem;
   max-height: 100%;
@@ -1194,7 +1311,7 @@
   padding-top: 2em;
   border-radius: 6px;
   z-index: 48;
-  overflow: scroll;
+  overflow: auto;
   -webkit-transition: ease-in;
   transition: ease-in;
   -webkit-transition-duration: 0.5s;
@@ -1210,7 +1327,8 @@
 }
 
 .price-bar .priceRadioButtonsDiv {
-  padding: 3px;
+  padding: 3px 30px;
+  max-width: 700px;
   width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1285,6 +1403,7 @@
           align-items: center;
   position: fixed;
   bottom: -30%;
+  max-width: 700px;
   width: 100vw;
   height: 23rem;
   max-height: 100%;
@@ -1292,7 +1411,8 @@
   padding-top: 2em;
   border-radius: 6px;
   z-index: 48;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-transition: ease-in;
   transition: ease-in;
   -webkit-transition-duration: 0.5s;
@@ -1300,7 +1420,8 @@
 }
 
 .locality-bar form {
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding-right: 10px;
 }
 
@@ -1313,7 +1434,8 @@
 }
 
 .locality-bar .localityRadioButtonsDiv {
-  padding: 3px;
+  padding: 3px 30px;
+  max-width: 700px;
   width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1635,7 +1757,8 @@
 #reserve {
   background-color: var(--gray);
   margin: 3.5em 0 1rem 0;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 1em;
 }
 
 #reserve .reserveTitle {
@@ -1918,7 +2041,8 @@
             transform: translateX(430px);
   }
   #body {
-    margin: 1rem;
+    margin: 1rem 0;
+    padding-bottom: 1em;
   }
   .swiper {
     height: 250px;
@@ -1937,14 +2061,21 @@
   .search-form > .chkinDetail > .chkinout > div > input,
   .search-form > .chkinDetail > .bookingDetail > div > span,
   .search-form > .chkinDetail > .bookingDetail > div > span > span {
-    font-size: 15px;
+    font-size: 14px;
   }
-  .search-form > .destination > input {
-    font-size: 18px;
+  .search-form > .destination > div > span {
+    font-size: 12px;
+  }
+  .search-form > .destination > .fa-search, .search-form > .destination > div > div > .fa-map-marker-alt {
+    font-size: 14px;
+  }
+  .search-form > .destination > div > div > input {
+    font-size: 14px;
+    line-height: 14px;
   }
   .search-form > .chkinDetail > .chkinout > label,
   .search-form > .chkinDetail > .bookingDetail > label {
-    font-size: 18px;
+    font-size: 14px;
   }
   .items > .item {
     display: -ms-grid;
@@ -1956,13 +2087,14 @@
     width: 100%;
     min-width: 150px;
     height: 100%;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     -o-object-fit: cover;
        object-fit: cover;
   }
   #popularDestinations > .popularDestination-title,
   #bestDeals > .bestDeals-title {
-    font-size: 18px;
+    font-size: 14px;
   }
   .item-description > .item-name {
     font-size: 16px;
@@ -1992,6 +2124,10 @@
 /* 769px-1024px Small Screens, Laptops*/
 /* 769px-1024px Small Screens, Laptops*/
 @media (min-width: 769px) {
+  #body {
+    margin: 1em auto;
+    width: 750px;
+  }
   .items > .item {
     display: -ms-grid;
     display: grid;
@@ -2002,7 +2138,8 @@
     width: 100%;
     min-width: 150px;
     height: 100%;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -2033,6 +2170,17 @@
 /* 1025px-1200px Desktops, large screens*/
 /* 1025px-1200px Desktops, large screens*/
 @media (min-width: 1025px) {
+  .search-form .destination div span {
+    font-size: 12px;
+  }
+  .search-form .destination div div input {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  #body {
+    margin: 1em auto;
+    width: 800px;
+  }
   .navigation-bar {
     display: -ms-grid;
     display: grid;

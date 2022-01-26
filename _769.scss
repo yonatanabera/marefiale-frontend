@@ -1,6 +1,11 @@
 /* 769px-1024px Small Screens, Laptops*/
 
 @media (min-width: 769px) {
+  #body {
+    margin: 1em auto;
+    width: 750px;
+  }
+
   .items > .item {
     display: grid;
     grid-template-columns: 300px 5fr;
@@ -12,7 +17,9 @@
         width: 100%;
         min-width: 150px;
         height: 100%;
-        border-radius: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        // border-radius: 4px;
         object-fit: cover;
       }
     }

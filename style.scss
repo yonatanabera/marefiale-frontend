@@ -93,6 +93,7 @@
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  background-color: var(--gray);
 }
 
 /*---------------------Navigation bar-------------------------*/
@@ -254,12 +255,65 @@
 
 /*---------------------Navigation bar-------------------------*/
 
+.leftAside,
+.rightAside {
+  display: none;
+}
+
 /*-------------------Search Bar------------------------------*/
 
 #searchBar {
   margin: 5rem 10px 1rem 10px;
   padding: 0 10px;
   border-radius: 5px;
+  background-color: var(--white);
+
+  .destinationsList {
+    background-color: white;
+    overflow: auto;
+    min-height: 50px;
+    max-height: 50%;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px 20px;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+    display: none;
+    li {
+      display: block;
+      font-size: 12px;
+      margin: 10px;
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--gray);
+      }
+
+      &:focus {
+        background-color: var(--gray);
+      }
+
+      &:active {
+        background-color: var(--gray);
+      }
+    }
+
+    li.selected {
+      background-color: var(--gray);
+    }
+  }
+
+  .destinationsList.active {
+    visibility: visible;
+    display: block;
+  }
 }
 
 .search-form {
@@ -274,29 +328,55 @@
   background-color: var(--gray);
   border-radius: 25px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 0;
 }
 
-.search-form > .destination > input {
+.search-form > .destination > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-form > .destination > div > div > input {
+  font-size: 12px;
   border: none;
   background-color: transparent;
+  line-height: 12px;
   // border-radius: 10px;
   // border-bottom: 1px solid #999;
   width: 80%;
 }
 
-.search-form > .destination > input:focus {
+.search-form > .destination > div > div {
+  display: flex;
+}
+
+.search-form > .destination > div > div > input:focus {
   // border-bottom: 3px solid var(--blue);
   transition: all 0.4s;
   outline: none;
 }
 
-.search-form > .destination > .fa-search {
+.search-form > .destination > .fa-search,
+.search-form > .destination > div > div > .fa-map-marker-alt {
   color: #999;
-  padding: 14px;
+  padding: 0 18px;
+  font-size: 10px;
+}
+.search-form > .destination > div > span {
+  margin: 2px 0 0 18px;
+  font-size: 10px;
+  color: var(--dark-gray);
+}
+.search-form > .destination > div > div > .fa-map-marker-alt {
+  color: var(--blue);
 }
 
 .search-form > .chkinDetail {
-  margin: 10px auto;
+  margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -306,20 +386,21 @@
 
 .search-form > .chkinDetail > .chkinout > label,
 .search-form > .chkinDetail > .bookingDetail > label {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
+  color: var(--dark-gray);
 }
 
 .search-form > .chkinDetail > .chkinout > div > input {
   background-color: transparent;
   color: var(--dark-gray);
-  text-align: center;
+  text-align: left;
 }
 
 .search-form > .chkinDetail > .chkinout > div > input,
 .search-form > .chkinDetail > .bookingDetail > div > span,
 .search-form > .chkinDetail > .bookingDetail > div > span > span {
-  font-size: 13px;
+  font-size: 12px;
   border: none;
   color: var(--dark-gray);
 }
@@ -384,7 +465,7 @@
 }
 
 .search-form > .chkinDetail > .verticalLine {
-  width: 2px;
+  width: 1px;
   background-color: var(--gray);
 }
 
@@ -419,6 +500,7 @@
   max-height: 100%;
   background-color: #fff;
   padding-top: 2em;
+  max-width: 700px;
   // top: 0;
   // bottom: 0;
   // right: 0;
@@ -426,7 +508,7 @@
   border-radius: 6px;
   z-index: 48;
   // transform: translateY(50%);
-  overflow: scroll;
+  overflow: auto;
   // transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: ease-in;
   transition-duration: 0.5s;
@@ -567,8 +649,9 @@
 
 #popularDestinations > .popularDestination-title {
   margin: 10px 20px;
-  font-size: 16px;
-  font-weight: bolder;
+  font-size: 12px;
+  color: var(--dark-gray);
+  font-weight: bold;
 }
 
 #popularDestinations > hr {
@@ -624,18 +707,24 @@
 
 /* --------------------Best Deals------------------------ */
 
+#body {
+  margin: 1rem 0;
+  background-color: var(--gray);
+}
+
 #bestDeals {
   margin: 2em 0;
 }
 
 #bestDeals > .bestDeals-title {
   margin: 10px 20px;
-  font-size: 16px;
-  font-weight: bolder;
+  font-size: 12px;
+  color: var(--dark-gray);
+  font-weight: bold;
 }
 
 #bestDeals > hr {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .items {
@@ -643,8 +732,9 @@
 }
 
 .items > .item {
-  margin: 1em 0.7em;
+  margin: 0.5em 0.7em;
   border-radius: 4px;
+  background-color: var(--white);
   // border: 7px solid var(--orange);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
@@ -658,7 +748,9 @@
   width: 100%;
   min-width: 70px;
   height: 100%;
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  // border-radius: 4px;
   object-fit: cover;
 }
 
@@ -812,6 +904,11 @@
     padding: 2em 1em;
     border-radius: 6px;
     width: 80%;
+    max-width: 600px;
+
+    .destinationsList {
+      top: 40%;
+    }
 
     .search-form {
       all: unset;
@@ -959,13 +1056,14 @@
   bottom: -30%;
   // bottom: 0;
   width: 100vw;
+  max-width: 700px;
   height: 13rem;
   max-height: 100%;
   background-color: #fff;
   // padding-top: 2em;
   border-radius: 6px;
   z-index: 48;
-  overflow: scroll;
+  overflow: auto;
   transition: ease-in;
   transition-duration: 0.5s;
 
@@ -976,8 +1074,9 @@
   }
 
   .sortRadioButtonsDiv {
-    padding: 3px;
+    padding: 3px 30px;
     width: 90vw;
+    max-width: 700px;
     display: flex;
     // border: 1px solid black;
     justify-content: space-between;
@@ -1036,6 +1135,7 @@
   position: fixed;
   bottom: -30%;
   // bottom: 0;
+  max-width: 700px;
   width: 100vw;
   height: 18rem;
   max-height: 100%;
@@ -1043,7 +1143,7 @@
   padding-top: 2em;
   border-radius: 6px;
   z-index: 48;
-  overflow: scroll;
+  overflow: auto;
   transition: ease-in;
   transition-duration: 0.5s;
 
@@ -1054,7 +1154,8 @@
   }
 
   .priceRadioButtonsDiv {
-    padding: 3px;
+    padding: 3px 30px;
+    max-width: 700px;
     width: 90vw;
     display: flex;
     // border: 1px solid black;
@@ -1114,6 +1215,7 @@
   position: fixed;
   bottom: -30%;
   // bottom: 0;
+  max-width: 700px;
   width: 100vw;
   height: 23rem;
   max-height: 100%;
@@ -1121,12 +1223,14 @@
   padding-top: 2em;
   border-radius: 6px;
   z-index: 48;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   transition: ease-in;
   transition-duration: 0.5s;
 
   form {
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding-right: 10px;
   }
 
@@ -1137,7 +1241,8 @@
   }
 
   .localityRadioButtonsDiv {
-    padding: 3px;
+    padding: 3px 30px;
+    max-width: 700px;
     width: 90vw;
     display: flex;
     // border: 1px solid black;
@@ -1167,6 +1272,7 @@
   transition: ease-in;
   transition-duration: 0.6s;
   bottom: 0;
+  // max-width: 700px;
 }
 
 /* --------------------2nd Page Ends ------------------------ */
@@ -1421,7 +1527,8 @@
 #reserve {
   background-color: var(--gray);
   margin: 3.5em 0 1rem 0;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 1em;
   .reserveTitle {
     text-align: center;
     padding: 20px 0;

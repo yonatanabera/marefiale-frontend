@@ -1,6 +1,67 @@
 /* 1025px-1200px Desktops, large screens*/
 
 @media (min-width: 1025px) {
+  // .contentWrapper {
+  //   display: grid;
+  //   grid-template-columns: 1fr 3fr 1fr;
+  //   grid-template-rows: auto;
+
+  //   .leftAside {
+  //     display: block;
+  //     grid-column: 1/2;
+  //     // grid-row: 1/-1;
+  //     // height: 100%;
+  //     background-color: black;
+  //     color: white;
+
+  //     div {
+  //       width: 100%;
+  //       height: 33vh;
+  //       display: block;
+  //       color: white;
+  //       background-color: white;
+  //     }
+  //   }
+
+  //   .rightAside {
+  //     display: block;
+  //     grid-column: 3/4;
+  //     // grid-row: 1/-1;
+  //     // height: 100%;
+  //     background-color: red;
+
+  //     div {
+  //       width: 100%;
+  //       height: 33vh;
+  //       background-color: black;
+  //       color: white;
+  //       background-color: white;
+  //     }
+  //   }
+  // }
+
+ .search-form{
+   .destination{
+     div{
+       span{
+         font-size: 12px;
+       }
+
+       div{
+         input{
+           font-size: 14px;
+           line-height: 14px;
+         }
+       }
+     }
+   }
+ }
+
+  #body {
+    margin: 1em auto;
+    width: 800px;
+  }
+
   .navigation-bar {
     // all: unset;
 

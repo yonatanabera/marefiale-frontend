@@ -48,6 +48,89 @@ const sidebarToggle = () => {
 
 /*-------------------Sidebar onclick fucntion ends here------------------*/
 
+/*-------------------Live search for destination starts here------------------*/
+
+function showDestinationsList() {
+  const destinationList = document.getElementById("destinationsList");
+  destinationList.classList.add("active");
+  fetch("https://www.marefiale.com/api/web/allDestinations", {
+    method: "get",
+  })
+    .then((res) => res.json())
+    .then((res) => viewSearchResultAll(res))
+    .catch((e) => console.log("error" + e));
+}
+
+function hideDestinationsList() {
+  const destinationList = document.getElementById("destinationsList");
+  destinationList.classList.remove("active");
+}
+
+function search(name) {
+  fetchSearchData(name);
+}
+
+function fetchSearchData(name) {
+  if (name) {
+    fetch("https://www.marefiale.com/api/searchByPropOrDest/" + name, {
+      method: "get",
+    })
+      .then((res) => res.json())
+      .then((res) => viewSearchResult(res))
+      .catch((e) => console.log("error" + e));
+  } else {
+    fetch("https://www.marefiale.com/api/web/allDestinations", {
+      method: "get",
+    })
+      .then((res) => res.json())
+      .then((res) => viewSearchResultAll(res))
+      .catch((e) => console.log("error" + e));
+  }
+}
+
+function viewSearchResultAll(data) {
+  const destinationList = document.getElementById("destinationsList");
+
+  destinationList.innerHTML = "";
+
+  // console.log();
+  if (data.length > 0) {
+    for (let i = 0; i < data.length; i++) {
+      const li = document.createElement("li");
+      li.innerHTML = data[i].desttitle;
+      destinationList.appendChild(li);
+    }
+  } else {
+    console.log("no elel");
+    const li = document.createElement("li");
+    li.innerHTML = "No Result found";
+    destinationList.appendChild(li);
+  }
+}
+function viewSearchResult(data) {
+  const destinationList = document.getElementById("destinationsList");
+
+  destinationList.innerHTML = "";
+
+  // console.log();
+  if (data.Destination.data.length > 0) {
+    for (let i = 0; i < data.Destination.data.length; i++) {
+      const li = document.createElement("li");
+      li.innerHTML = data.Destination.data[i].desttitle;
+      destinationList.appendChild(li);
+      // li.addEventListener("click", function () {
+      //   alert("it is working");
+      // });
+    }
+  } else {
+    const li = document.createElement("li");
+    li.innerHTML = "No Result Found";
+    destinationList.appendChild(li);
+  }
+}
+
+/*-------------------Live search for destination ends here------------------*/
+
 /*-------------------Input number of child and rooms------------------*/
 
 const slideNumber = document.querySelector(".slide-number-of-rooms-bg");
