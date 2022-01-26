@@ -400,12 +400,48 @@
   width: 100%;
 }
 
-.search-form > .destination > div > div > input {
+.search-form > .destination > div > div > input,
+.search-form > .destination > div > div > select {
   font-size: 12px;
   border: none;
   background-color: transparent;
   line-height: 12px;
   width: 80%;
+}
+
+.select2-container--open .select2-dropdown--below {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  min-width: 250px;
+}
+
+.select2-results__options {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  font-size: 12px;
+  background-color: transparent;
+  color: var(--dark-gray);
+}
+
+.select2-search--dropdown .select2-search__field {
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 5px;
+  background-color: var(--gray);
+  border: none;
+}
+
+.select2-search--dropdown .select2-search__field:focus {
+  outline: none;
+}
+
+.select2-results__option--selectable {
+  font-size: 12px;
+  padding: 10px;
 }
 
 .search-form > .destination > div > div {
@@ -1990,10 +2026,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2061,12 +2093,13 @@
   .search-form > .chkinDetail > .chkinout > div > input,
   .search-form > .chkinDetail > .bookingDetail > div > span,
   .search-form > .chkinDetail > .bookingDetail > div > span > span {
-    font-size: 14px;
+    font-size: 12px;
   }
   .search-form > .destination > div > span {
     font-size: 12px;
   }
-  .search-form > .destination > .fa-search, .search-form > .destination > div > div > .fa-map-marker-alt {
+  .search-form > .destination > .fa-search,
+  .search-form > .destination > div > div > .fa-map-marker-alt {
     font-size: 14px;
   }
   .search-form > .destination > div > div > input {
@@ -2075,7 +2108,7 @@
   }
   .search-form > .chkinDetail > .chkinout > label,
   .search-form > .chkinDetail > .bookingDetail > label {
-    font-size: 14px;
+    font-size: 12px;
   }
   .items > .item {
     display: -ms-grid;
@@ -2229,7 +2262,7 @@
     all: unset;
     color: white;
     padding: 0 1.2em;
-    font-size: 18px;
+    font-size: 14px;
   }
   .navigation-bar > .menu ul li i {
     display: none;

@@ -13,6 +13,10 @@
     <meta property="og:url" content="https://www.marefiale.com" />
     <link rel="shortcut icon" type="image/png" href="logo-01.png" />
     <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     />
@@ -115,14 +119,20 @@
                     <span>Select Destination</span>
                     <div>
                       <i class="fas fa-map-marker-alt"></i>
-                      <input
+                      <!-- <input
                         id="inputDestination"
                         type="text"
                         placeholder="Addis Ababa"
                         oninput="search(this.value)"
                         onfocus="showDestinationsList()"
                         onblur="hideDestinationsList()"
-                      />
+                      /> -->
+
+                      <select
+                        id="inputDestination"
+                        class="js-example-basic-single"
+                        name="destination"
+                      ></select>
                     </div>
                   </div>
                   <i class="fas fa-search"></i>
@@ -227,7 +237,7 @@
                             >
                               -
                             </button>
-                            <span class="noOfChild">1</span>
+                            <span class="noOfChild">0</span>
                             <button
                               type="button"
                               class="plus"
@@ -266,7 +276,7 @@
               </div>
             </form>
 
-            <ul id="destinationsList" class="destinationsList"></ul>
+            <!-- <ul id="destinationsList" class="destinationsList"></ul> -->
           </section>
 
           <!-- Search bar ends here -->
@@ -520,6 +530,16 @@
     type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
   ></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".js-example-basic-single").select2({
+        width: "100%",
+        theme: "modern",
+      });
+    });
+  </script>
 
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="script.js"></script>

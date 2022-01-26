@@ -5,6 +5,17 @@ container.style.display = "none";
 window.onload = () => {
   loading.style.display = "none";
   container.style.display = "block";
+
+  const inputDestination=document.getElementById('inputDestination');
+
+  fetch("https://www.marefiale.com/api/web/allDestinations", {
+      method: "get",
+    })
+      .then((res) => res.json())
+      .then((res) => viewSearchResult(res))
+      .catch((e) => console.log("error" + e));
+
+
   //   setTimeout(function () {
   //     loading.style.display = "none";
   //     container.style.display = "block";
@@ -50,21 +61,22 @@ const sidebarToggle = () => {
 
 /*-------------------Live search for destination starts here------------------*/
 
-function showDestinationsList() {
-  const destinationList = document.getElementById("destinationsList");
-  destinationList.classList.add("active");
-  fetch("https://www.marefiale.com/api/web/allDestinations", {
-    method: "get",
-  })
-    .then((res) => res.json())
-    .then((res) => viewSearchResultAll(res))
-    .catch((e) => console.log("error" + e));
-}
 
-function hideDestinationsList() {
-  const destinationList = document.getElementById("destinationsList");
-  destinationList.classList.remove("active");
-}
+// function showDestinationsList() {
+//   // const destinationList = document.getElementById("destinationsList");
+//   // destinationList.classList.add("active");
+//   fetch("https://www.marefiale.com/api/web/allDestinations", {
+//     method: "get",
+//   })
+//     .then((res) => res.json())
+//     .then((res) => viewSearchResultAll(res))
+//     .catch((e) => console.log("error" + e));
+// }
+
+// function hideDestinationsList() {
+//   const destinationList = document.getElementById("destinationsList");
+//   destinationList.classList.remove("active");
+// }
 
 function search(name) {
   fetchSearchData(name);
@@ -88,36 +100,37 @@ function fetchSearchData(name) {
   }
 }
 
-function viewSearchResultAll(data) {
-  const destinationList = document.getElementById("destinationsList");
+// function viewSearchResultAll(data) {
+//   const destinationList = document.getElementById("destinationsList");
 
-  destinationList.innerHTML = "";
+//   destinationList.innerHTML = "";
+
+//   // console.log();
+//   if (data.length > 0) {
+//     for (let i = 0; i < data.length; i++) {
+//       const li = document.createElement("li");
+//       li.innerHTML = data[i].desttitle;
+//       destinationList.appendChild(li);
+//     }
+//   } else {
+//     console.log("no elel");
+//     const li = document.createElement("li");
+//     li.innerHTML = "No Result found";
+//     destinationList.appendChild(li);
+//   }
+// }
+function viewSearchResult(data) {
+  const inputDestination = document.getElementById("inputDestination");
+
+  // inputDestination.innerHTML = "";
 
   // console.log();
+  console.log(data.length);
   if (data.length > 0) {
     for (let i = 0; i < data.length; i++) {
-      const li = document.createElement("li");
-      li.innerHTML = data[i].desttitle;
-      destinationList.appendChild(li);
-    }
-  } else {
-    console.log("no elel");
-    const li = document.createElement("li");
-    li.innerHTML = "No Result found";
-    destinationList.appendChild(li);
-  }
-}
-function viewSearchResult(data) {
-  const destinationList = document.getElementById("destinationsList");
-
-  destinationList.innerHTML = "";
-
-  // console.log();
-  if (data.Destination.data.length > 0) {
-    for (let i = 0; i < data.Destination.data.length; i++) {
-      const li = document.createElement("li");
-      li.innerHTML = data.Destination.data[i].desttitle;
-      destinationList.appendChild(li);
+      const li = new Option(data[i].desttitle, data[i].id);
+      // li.innerHTML = data[i].desttitle;
+      inputDestination.add(li, undefined);
       // li.addEventListener("click", function () {
       //   alert("it is working");
       // });
